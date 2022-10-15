@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loading.css">
 </head>
 <body class="bg-dark">
     <div class="container-fluid container-main">
@@ -51,7 +52,7 @@
                     </li>
                   </ul>
 
-                  <div class="d-flex align-items-center">
+                  <div class="d-flex align-items-center d-none">
                     <a href="login.php"><button type="button" class="btn btn-link px-3 me-2">
                       Iniciar secion
                     </button></a>
@@ -71,19 +72,26 @@
                     <img src="asset/image/logico.jpg" class="rounded mx-auto d-block log-ico" alt="...">
                     
                     <div style="width: 80%;">
-                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+                      <!-- loading -->
+                      <div class="container-loading d-none" id="login-loading">                    
+                        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                      </div>
+
+
+                        <form>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control border border-primary border-2" id="floatingInput" placeholder="Usuario" name="user"> 
-                                <label for="floatingInput">Usuario</label>
+                                <input type="text" class="form-control border border-primary border-2" id="user" placeholder="Usuario" name="user"> 
+                                <label for="user">Usuario</label>
                             </div>
                             
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control border border-primary border-2" id="floatingPassword" placeholder="Password" name="pass">
-                                <label for="floatingPassword">Password</label>
+                                <input type="password" class="form-control border border-primary border-2" id="password" placeholder="Password" name="pass">
+                                <label for="password">Password</label>
                             </div>
-                            
+                            <p class="text-center text-warning d-none" id="login-error">Usuario o contraseña invalidos</p>
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary" name="continuar" type="submit">Continuar</button>
+                                <button class="btn btn-primary" name="continuar" type="button" id="continuar">Continuar</button>
                             </div>
                         </form>
                     </div>
@@ -96,27 +104,16 @@
 
 
             </div>
-            <div style="width=100%;">
-                    
-                    <?php
+            <div style="width:100%;">
 
-                        require "inc/comprueba-login.php";
-
-                        if(isset($_POST["continuar"])){
-                            $user_name=htmlentities(addslashes($_POST["user"]));
-                            $user_pass=htmlentities(addslashes($_POST["pass"]));
-    
-                            $iniciar=new CompruebaLogin();
-                            $iniciar->verificarUsuario($user_name, $user_pass);
-    
-                        }                       
-                    ?>
 
                 </div>
     </div>
     
 </div>
 
+<!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+<script src="js/login.js"></script>
 
 
     <!-- Boostrap script-->

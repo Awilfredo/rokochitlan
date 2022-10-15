@@ -8,7 +8,9 @@
 
 }
 
-.container-xl{
+
+
+.container-xxl{
     padding: 0px;
     margin: 0px;
 }
@@ -25,7 +27,7 @@
 }
 .container-carrusel2{
 
-    width: 100%;
+    width: 75%;
 }
 
 
@@ -37,11 +39,14 @@
     top: 10px;
     left: 10px;
 }
+
+
 .centrado{
     position: absolute;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+
 }
 
 .text-stroke{
@@ -52,6 +57,7 @@
 
 .oscurecer{
     filter: brightness(50%);
+    
   }
 
 
@@ -64,4 +70,9 @@
         width: 100%;
     }
 
+    .container-carrusel2{
+        width: 100%;
+    }
+
   }
+

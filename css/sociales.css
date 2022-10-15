@@ -1,0 +1,54 @@
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin: 10px;
+}
+
+.social-ico{
+    width: 50px;
+    border-radius: 100px;
+}
+
+
+.intermitente{
+    width: 50px;
+    border: 1px solid rgb(58, 89, 155);
+    border-radius: 100px;
+    padding: 8px 0px;
+    box-shadow: 0px 0px 20px;
+    animation: infinite resplandorAnimation 2s;
+    
+  }
+  @keyframes resplandorAnimation {
+    0%,100%{
+      box-shadow: 0px 0px 20px;
+    }
+    50%{
+    box-shadow: 0px 0px 0px;
+    
+    }
+  
+  }
+
+@media only screen and (max-width: 600px){
+
+    .social-media{
+        width: 150px;
+    }
+    
+    .social-ico{
+        width: 40px;
+    }
+
+
+    .intermitente{
+        width: 50px;
+        border-radius: 100px;
+        padding: 3px 0px;
+
+        
+      }
+
+
+  }

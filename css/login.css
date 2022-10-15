@@ -1,0 +1,21 @@
+.container-login-form{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 600px;
+    background-color: rgb(77, 61, 61);
+    margin: 30px;
+
+}
+
+.container-login{
+    display: flex;
+    flex-wrap: wrap;
+}
+.log-ico{
+ width: 200px;
+ 
+}
+

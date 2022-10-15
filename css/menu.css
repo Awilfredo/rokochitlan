@@ -1,0 +1,136 @@
+body{
+  margin: none;
+  padding: none;
+}
+
+hr{
+  color: white;
+  border-width: 3px;
+}
+.acordeon{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+}
+
+.categorias{
+  display: grid;
+  column-gap: 5px;
+  row-gap: 5px;
+  grid-template-areas: "a b c d e f g";
+  margin-top: 10px;
+  }
+
+  .bt-categoria{
+    width: 100%;
+  }
+
+
+  .despliegue{
+    margin-top:25px ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+  .plato{
+    display: grid;
+    grid-template-areas: "im"
+                          "ti"
+                          "de"
+                          "pre"
+                          "con";
+    width: 300px;
+    
+    margin: 15px;
+  }
+
+  .im{
+    grid-area: im;
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+    margin-top: 10px; 
+  }
+
+  .im img{
+    width: 85%;
+
+  }
+
+  .control-menu{
+    grid-area: con;
+  }
+
+  .ti{grid-area: ti;}
+  .de{grid-area: de;}
+  .pre{grid-area: pre;}
+
+  .btn-control{
+    height: 50px;
+  }
+
+  .switch-size{
+    width: 50px;
+    height: 25px;
+  }
+
+  @media only screen and (max-width: 1440px){
+
+    .categorias{
+        display: grid;
+        grid-template-areas: "a b c d e";
+      }
+  }
+  
+  @media only screen and (max-width: 1024px){
+
+    .categorias{
+        grid-template-areas: "a b c d";
+      }
+  }
+
+  @media only screen and (max-width: 768px){
+
+    .categorias{
+        grid-template-areas: "a b c";
+      }
+
+      .buscador{
+        grid-area: a b;
+      }  
+  }
+  
+  @media only screen and (max-width: 600px){
+
+      .categorias{
+        grid-template-columns: auto;
+        grid-template-areas: "a b"
+                             "c d";
+      }
+
+      .buscador{
+        grid-area: a b;
+      }
+
+
+      .plato{
+        width: 95%;   
+        margin: 5px;                   
+      }
+
+      
+
+
+
+
+  }

@@ -1,0 +1,68 @@
+.categorias{
+    width: 60%;
+}
+
+.btn-crear-categoria{
+    width: 100%;
+    height: 60px;
+}
+
+.container-nuevomenu{
+    width: 40%;
+}
+
+.container-xl{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.check-caja{
+    width: 20px;
+    height: 20px;
+}
+.foto{
+    display: block;
+  width:40%;
+
+}
+.img-nuevo{
+    width: 100%;
+
+}
+
+.btn-imagen{
+    display: flex;
+    justify-content: center;
+}
+
+.controlesformulario{
+    margin: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width:600px){
+    .controlesformulario{
+        margin-top: 50px;
+        width:100%;
+    }
+
+    .container-xl{
+        display: block;
+        justify-content: unset;
+    }
+
+    .container-nuevomenu{
+        width: 100%;
+    }
+    .foto{
+        width:100%
+      }
+
+    .img-nuevo{
+        width: 100%;
+    }
+    
+}
