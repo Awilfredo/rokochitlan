@@ -3,6 +3,10 @@ function onloadpage(){
 sesionVerify();   
 };
 
+document.getElementById("btn_ver_menu").addEventListener("click", ()=>{
+  window.location.assign("menu.html");
+})
+
 function ajust(data){
     var logindiv=document.getElementById("login");
     var logoutdiv=document.getElementById('logout');

@@ -7,6 +7,9 @@ var id= urlParams.get('id');
 document.getElementById('enviar').addEventListener("click", validarDatos);
 var crear_categoria= document.getElementById("btn-crear-categoria");
 crear_categoria.addEventListener("click", crearCategoria);
+document.getElementById("btn-eliminar-categoria").addEventListener('click', ()=>{eliminarCategoria()});
+document.getElementById("btn-editar-categoria").addEventListener('click', ()=>{editarCategoria()});
+
 
 /* Boton cambiar imagen*/
 document.getElementById("btn-seleccionar").addEventListener("click", ()=>{
@@ -110,6 +113,7 @@ if(id){
 
 async function getCategorias(){
     const $selector=document.getElementById('selector-categorias');
+    $selector.innerHTML= "";
     try {
         let res=await fetch("inc/devuelveCategorias.php", {
             method: 'POST',
@@ -141,6 +145,48 @@ async function getCategorias(){
 }
 
 
+
+
+
+async function eliminarCategoria(){
+
+  let id = document.getElementById('selector-categorias').value;
+  let combo = document.getElementById('selector-categorias');
+  let nombre_categoria= combo.options[combo.selectedIndex].text;
+  alert(nombre_categoria + " " + id )
+  Swal.fire({
+    title: 'Estas seguro que deseas eliminar la categoría "' + nombre_categoria + '"?',
+    text: "Al hacer esto deberás cambiar la categoría de los elementos que pertenecían a esta categoría de manera manual.",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    cancelButtonText: 'Cancelar',
+    confirmButtonText: 'Si, Eliminarlo!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+
+      let data= {
+        operacion: "DEL",
+        id: id
+      }
+
+      var respuesta= enviarData(data, "inc/categorias.php");
+      Swal.fire(
+        'Categoría Eliminada!',
+        'La categoría "' + nombre_categoria + '" se ha eliminado.',
+        'success'
+
+        
+      )
+      /*
+      var a = setInterval(function(){
+        location.reload();
+         clearInterval(a);}, 4000);     */
+    }
+  })
+}
+
 async function crearCategoria(){
   const { value: nueva_categoria } = await Swal.fire({
     title: 'Digite el nombre de la nueva categoría a crear.',
@@ -166,16 +212,72 @@ async function crearCategoria(){
     if (result.isConfirmed) {
 
         let data={
-            categoria: nueva_categoria
+            categoria: nueva_categoria,
+            operacion: "INS"
               };
 
-        var respuesta= enviarData(data, "inc/crearcategoria.php");
+        var respuesta= enviarData(data, "inc/categorias.php");
+        
+
 
 
 
       Swal.fire('Creado!', '', 'success')
     } else if (result.isDenied) {
       Swal.fire('Changes are not saved', '', 'info')
+    }
+  })
+
+}
+
+
+}
+
+async function editarCategoria(){
+  let id = document.getElementById('selector-categorias').value;
+  let combo = document.getElementById('selector-categorias');
+  let nombre_categoria= combo.options[combo.selectedIndex].text;
+  
+  const { value: nueva_categoria } = await Swal.fire({
+    title: 'Digite el nombre con el que deseas renombrar la categoría "' + nombre_categoria + '"',
+    input: 'text',
+    showCancelButton: true,
+    cancelButtonText: 'Cancelar',
+    inputValidator: (value) => {
+      if (!value) {
+        return 'Debes escribir algo!'
+      } 
+    }
+  })
+  
+
+  if(nueva_categoria){      
+    Swal.fire({
+    title: '¿Estás seguro que deseas renombrar "' + nombre_categoria + '" a "' + nueva_categoria +
+    '"?',
+    showDenyButton: true,
+    showCancelButton: false,
+    confirmButtonText: 'Sip!',
+    denyButtonText: `Nop!`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+
+        let data={
+            categoria: nueva_categoria,
+            id: id,
+            operacion: "MOD"
+              };
+
+        var respuesta= enviarData(data, "inc/categorias.php");
+        
+
+
+
+
+      Swal.fire('Modificado!', '', 'success')
+    } else if (result.isDenied) {
+      Swal.fire('No se guardaron los cambios', '', 'info')
     }
   })
 
@@ -194,18 +296,21 @@ async function enviarData(data, link){
             headers: {
               'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify(data)}),
+            body: JSON.stringify(data)})
 
 
+
+         /*   
         json= await res.json();
         console.log(json);
         const $selector=document.getElementById('selector-categorias');
-        var agregado= json[0];
+        var i=json.length;
+        var agregado=json[i-1];
         const $opcion = document.createElement("option");
         $opcion.innerHTML=`${agregado.categoria}`;
         $opcion.value=`${agregado.id}`;
         $opcion.selected=true;
-        $selector.appendChild($opcion);
+        $selector.appendChild($opcion);*/
 
         if(!res.ok)throw {status:res.status, statusText:res.statusText};
         //throw retorna el flujo al catch
@@ -215,8 +320,11 @@ async function enviarData(data, link){
 
     }finally{
         //console.log("se ejecutara independientemente");
+        getCategorias();
     }
 }
+
+
 
 function ajust(data){
     if(!data.activa){

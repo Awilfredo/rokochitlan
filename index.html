@@ -13,6 +13,12 @@
 
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+
+
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sociales.css">
 
@@ -39,11 +45,16 @@
 
 
                 <div>
-                  <a class="navbar-brand" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a>
+                  <a class="navbar-brand" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#d0d0d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a>
                 </div>
 
                 <div class="iconos-navegador">
-                  <a class="navbar-brand" href="menu.html">Menu</a>
+
+                    <div class="menu-ico">
+                      <a class="navbar-brand" href="menu.html">Menú <img src="asset/image/chilli-svgrepo-com.svg" alt="">       
+                      </a>
+                    </div>
+
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,13 +72,13 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="menu.html">link1</a>
+                      <a class="nav-link active" aria-current="page" href="#sobre_nosotros">Sobre nosotros</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
+                      <a class="nav-link active" href="#platos_bebidas">Platos y bebidas</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link disabled">Disabled</a>
+                      <a class="nav-link active" href="#ubicacion">Ubicación</a>
                     </li>
                   </ul>
 
@@ -125,9 +136,93 @@
               </div>
             </div>
 
-            <div class="mapa mt-5 d">
-              <h3 class="text-center text-white">Nuestra ubicación</h3>
-              <p class="text-center text-white fs-4">Estamos ubicados en el corazon de Suchitoto</p>
+            <br><br><br>
+
+            <div class="bienvenida" id="sobre_nosotros">
+
+              <div class="bienvenida-texto text-center">
+                <p><b> <hr> BIENVENIDOS <hr> </b></p>
+                <h1><b>RESTAURANTE BAR <br>
+                  ROCKOCHITLAN</b></h1>
+                  
+                  <p class="invite">Ven y vive una gran experiencia con nuestros exquisitos platos y las mejores cervezas acompañado de la buena Música. Trae a toda tu familia y amigos para vivir un momento maravilloso, lleno de sensaciones al paladar.</p>
+                </div>
+
+                <br>
+              <div class="d-flex justify-content-center">
+                <img class="bienvenida-img" src="asset/image/barimg1.jpg" alt="">
+              </div>
+              <div class="bienvenida-texto"></div>
+              </div>
+
+
+              <br><br><br><br><br><br>
+
+              
+              <section class="container-xxl" id="platos_bebidas">
+                <div class="text-center">
+                  <hr>
+                  <h2><b>NUESTROS PLATOS Y BEBIDAS</b></h2>
+                  <hr>
+                </div>
+                
+                <br><br>
+            <div class="bienvenida">      
+
+
+                  <div class="card mt-5">
+                    <div>
+                      <img src="asset/image/icon-serv-1-256x256.png" alt="">
+                    </div>
+                    <h3> Menú diferente</h3>
+                    <div class="d-flex justify-content-center"><p>Contamos con los mejores menús para tu paladar.</p></div>
+                  </div>
+
+                  
+                  <div class="card mt-5">
+                    <div>
+                      <img src="asset/image/icon-serv-2-256x256.png" alt="">
+                    </div>
+                    <h3>Ingredientes frescos </h3>
+                    <div class="d-flex justify-content-center"><p>Ingredientes 100% naturales y de alta calidad.</p></div>
+                  </div>
+
+                  
+                  <div class="card mt-5">
+                    <div>
+                      <img src="asset/image/icon-serv-3-256x256.png" alt="">
+                    </div>
+                    <h3> Chefs Certificados</h3>
+                    <div class="d-flex justify-content-center"><p>Disfruta de la mejor comida preparada por cocineros especializados.</p></div>
+                  </div>
+
+
+                  <div class="card mt-5">
+                    <div>
+                      <img src="asset/image/icon-serv-4-256x256.png" alt="">
+                    </div>
+                    <h3>Variedad de bebidas</h3>
+                    <div class="d-flex justify-content-center"><p>Contamos con una amplia variedad de bebidas nacionales y extranjeras.</p></div>
+                  </div>
+
+
+
+
+                </div>
+
+                <br><br><br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn btn-outline-success" id="btn_ver_menu" type="button">Ver el menú</button>
+                </div>
+
+                <br><br>
+                
+                <hr>
+              </section>
+
+            <div class="mapa mt-5 d" id="ubicacion">
+              <h3 class="text-center"><b>Nuestra ubicación</b></h3>
+              <p class="text-center text-white fs-4">Estamos ubicados en el corazón de Suchitoto</p>
               <div class="d-flex justify-content-center">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d431.23127656765485!2d-89.02727428881674!3d13.939190070844248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f636bde29d47e8d%3A0x5a735039f954f775!2sRockochitl%C3%A1n%20Grill%20And%20Music!5e0!3m2!1ses-419!2sfr!4v1663871798635!5m2!1ses-419!2sfr" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 

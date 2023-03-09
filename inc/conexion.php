@@ -5,7 +5,7 @@
         public function __construct(){
             try{
                 /*$this->conexion_db=new PDO('mysql:host=localhost; dbname=id19290816_rockochitlan', 'id19290816_awilfredo94', 'Galadriel94*');*/
-                $this->conexion_db=new PDO('mysql:host=localhost; dbname=rockochitlan', 'root', '');
+                $this->conexion_db=new PDO('mysql:host=localhost; dbname=rockochitlan', 'root', 'Galadriel94*');
 
                 $this->conexion_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $this->conexion_db->exec("SET CHARACTER SET utf8");

@@ -107,7 +107,7 @@ require "conexion.php";
         }else{
             $posvisible=0;
         }
-
+/*
         echo "<br>" . $posid;
         echo "<br>" . $posnombre;
         echo "<br>" . $posdescripcion;
@@ -116,6 +116,7 @@ require "conexion.php";
         echo "<br>" . $posdel_dia;
         echo "<br>" . $posvisible;
         echo "<br>" . $nombreimagen;
+        */
 
         //ruta de la carpeta destino del servidor
         //$carpeta_destino=$_SERVER['DOCUMENT_ROOT'] . '/rocko/asset/menu_fot/';
@@ -127,12 +128,12 @@ require "conexion.php";
     $crear= new CreaMenu();
 
     if($posid){
-        echo "true";
+
         $crear->modificarMenu($posid, $poscategoria, $posnombre, $posdescripcion, $posprecio, $nombreimagen, $posdel_dia, $posvisible);
          header('Location: /menu.html');
 
     }else{
-        echo "false";
+
         $crear->nuevoMenu($poscategoria, $posnombre, $posdescripcion, $posprecio, $nombreimagen, $posdel_dia, $posvisible);
        
         header('Location: /nuevomenu.html');

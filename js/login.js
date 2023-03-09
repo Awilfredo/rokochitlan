@@ -64,7 +64,7 @@ var onClickButton= function(){
                 d.setTime(d.getTime() + (12*60*60*1000));
                 let expires = "expires="+ d.toUTCString();
                 document.cookie = "username="+ json_user + ";" + expires;
-                window.location.replace("index.html");
+                window.location.replace("menu.html");
               /* if (document.referrer.indexOf(window.location.host) !== -1) { 
                 window.history.back();
                 } 

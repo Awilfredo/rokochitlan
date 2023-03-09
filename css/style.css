@@ -1,78 +1,110 @@
-
-
-.container-main{
-    display: flex;
-    justify-content: center;
-    padding: 0px;
-    margin: 0px;
-
+body {
+  font-family: "Noto Serif", serif;
+  color: #d0d0d0;
 }
 
-
-
-.container-xxl{
-    padding: 0px;
-    margin: 0px;
+.bienvenida {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.banner{
-    width: 100%;
+.bienvenida-texto {
+  max-width: 500px;
 }
 
-
-.container-carrusel{
-
-    margin-top: 25px;
-    width: 60%;
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #d0d0d0;
+  color: #0d0d0d;
+  text-align: center;
+  width: 300px;
 }
-.container-carrusel2{
 
+.card img {
+  width: 150px;
+}
+
+.card p {
+  width: 150px;
+}
+
+.bienvenida-img {
+  max-width: 400px;
+}
+
+.container-main {
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container-xxl {
+  padding: 0px;
+  margin: 0px;
+}
+
+.banner {
+  width: 100%;
+}
+
+.container-carrusel {
+  margin-top: 25px;
+  width: 60%;
+}
+.container-carrusel2 {
+  width: 75%;
+}
+
+.contenedor {
+  position: relative;
+}
+.texto-encima {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.centrado {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px black;
+  font-family: arial;
+  color: green;
+  text-shadow: 0 0 2px black;
+}
+
+.oscurecer {
+  filter: brightness(50%);
+}
+
+@media only screen and (max-width: 600px) {
+  .bienvenida-img {
     width: 75%;
-}
-
-
-.contenedor{
-    position: relative;
-}
-.texto-encima{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-
-.centrado{
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-}
-
-.text-stroke{
-    -webkit-text-stroke: 1px black;
-    font-family: arial; color: green;
-    text-shadow: 0 0 2px black;
-}
-
-.oscurecer{
-    filter: brightness(50%);
-    
   }
 
-
-
-  @media only screen and (max-width: 600px){
-
-    .container-carrusel{
-
-        margin-top: 0px;
-        width: 100%;
-    }
-
-    .container-carrusel2{
-        width: 100%;
-    }
-
+  .container-carrusel {
+    margin-top: 0px;
+    width: 100%;
   }
 
+  .container-carrusel2 {
+    width: 100%;
+  }
+
+  .bienvenida-texto {
+    width: 80%;
+  }
+
+  .bienvenida {
+    justify-content: center;
+  }
+}

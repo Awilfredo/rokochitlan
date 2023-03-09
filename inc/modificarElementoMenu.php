@@ -65,7 +65,7 @@ if(isset($_SESSION["usuario"])){
             break;
     
         case 2:
-            $del_dia_menu=$data->value;
+            $visible_menu=$data->value;
             $json= json_encode($modificar->visible($id_menu, $visible_menu));
             break;
     
